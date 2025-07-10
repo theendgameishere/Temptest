@@ -84,17 +84,13 @@
       "serviceType": "Electrical Contractor"
     }
     </script>
-
+    
     <style>
-        :root{
-            --dark:#111827;
-            --dark-2:#1F2937;
-            --accent:#FBBF24;
-        }
-        body{
-            font-family:'Roboto',sans-serif;
-            background-color:var(--dark);
-            color:#e5e7eb; /* Ensuring overall body text color is light */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark);
+            color: #e5e7eb; /* Ensuring overall body text color is light */
+            overflow-x: hidden; /* FIX: Prevents horizontal scroll from AOS animations */
         }
         h1, h2, h3, h4, p, a, strong, span, li, summary, label, input, textarea, button {
             color: inherit; /* Ensure all child elements inherit the body's text color */
@@ -115,59 +111,64 @@
         h1, h2, h3 {
             font-family: 'Poppins', sans-serif;
         }
-        .gradient-text{background:-webkit-linear-gradient(45deg,var(--accent),#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        /* FIX: Changed gradient-text to white */
+        .gradient-text {
+            color: white; /* Changed from gradient to solid white */
+            -webkit-background-clip: unset; /* Remove previous clip */
+            -webkit-text-fill-color: unset; /* Remove previous fill */
+        }
         .cta-button{transition:all .3s ease;box-shadow:0 4px 15px rgba(251,191,36,.2);}
         .cta-button:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(251,191,36,.4);}
 
         /* Section specific background colors for clarity */
-        #problem { background-color: var(--dark-2); } /* Changed from gray-800 to dark-2 */
-        #services { background-color: var(--dark); } /* Changed from gray-900 to dark */
-        #testimonials { background-color: var(--dark-2); } /* Changed from gray-800 to dark-2 */
-        #trust { background-color: var(--dark); } /* Changed from gray-900 to dark */
-        #faq { background-color: var(--dark-2); } /* Changed from gray-800 to dark-2 */
-        #contact { background-color: var(--dark); } /* Changed from gray-900 to dark */
-        footer { background-color: var(--dark-2); } /* Changed from gray-900 to dark-2 */
+        #problem { background-color: var(--dark-2); } 
+        #services { background-color: var(--dark); } 
+        #testimonials { background-color: var(--dark-2); } 
+        #trust { background-color: var(--dark); } 
+        #faq { background-color: var(--dark-2); } 
+        #contact { background-color: var(--dark); } 
+        footer { background-color: var(--dark-2); } 
 
         .testimonial-card, .faq-item, .trust-badge-card {
-            background-color: var(--dark-2); /* Ensuring these elements also use the appropriate dark shade */
+            background-color: var(--dark-2); 
         }
 
         /* Form input/textarea styling */
         input[type="text"], input[type="email"], textarea {
-            background-color: var(--dark) !important; /* Ensuring dark background for inputs */
-            border-color: rgba(255, 255, 255, 0.1) !important; /* Light border */
-            color: #e5e7eb !important; /* Light text color */
+            background-color: var(--dark) !important; 
+            border-color: rgba(255, 255, 255, 0.1) !important; 
+            color: #e5e7eb !important; 
         }
         input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5) !important; /* Accent shadow on focus */
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.5) !important; 
         }
 
         /* Chatbot Styling */
         #aminos-chat-plugin {
-            transform: scale(1.6) !important; /* Increased from 1.5 to 1.6 (60% larger) */
-            right: 60px !important; /* Moved further left from the very edge */
-            bottom: 60px !important; /* Moved further up from the very bottom */
-            transform-origin: bottom right; /* Ensures scaling is from bottom right corner */
-            z-index: 1000; /* Ensure it's on top */
+            transform: scale(1.6) !important; 
+            right: 80px !important; /* Moved further left from 60px to 80px */
+            bottom: 80px !important; /* Moved further up from 60px to 80px */
+            transform-origin: bottom right; 
+            z-index: 1000; 
         }
 
         /* Responsive logo sizing */
         .hero-section img {
-            width: 85% !important; /* Make it take more width */
-            max-width: 500px !important; /* Max width for larger screens */
-            height: auto !important; /* Maintain aspect ratio */
-            margin-bottom: 3rem !important; /* Ensure spacing below logo */
+            width: 85% !important; 
+            max-width: 500px !important; 
+            height: auto !important; 
+            margin-bottom: 3rem !important; 
         }
-        @media (min-width: 768px) { /* Adjust for medium screens and up */
+        @media (min-width: 768px) { 
             .hero-section img {
-                max-width: 600px !important; /* Larger max width on desktop */
+                max-width: 600px !important; 
                 margin-bottom: 4rem !important;
             }
         }
-        @media (min-width: 1024px) { /* Adjust for large screens and up */
+        @media (min-width: 1024px) { 
             .hero-section img {
-                max-width: 700px !important; /* Even larger max width on larger desktops */
+                max-width: 700px !important; 
             }
         }
     </style>
@@ -182,7 +183,7 @@
              loading="lazy"
              data-aos="zoom-in">
 
-        <h1 class="text-6xl md:text-8xl font-bold text-white leading-tight mb-4"
+        <h1 class="text-6xl md:text-8xl font-bold leading-tight mb-4"
             data-aos="fade-up" data-aos-delay="100">
             <span class="gradient-text">Garner Electric Inc.</span>
         </h1>
