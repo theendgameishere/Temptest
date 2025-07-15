@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | The Sarcastic Circus</title>
+  <meta name="description" content="Explore our full lineup of brand, web, and AI services." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Styles & Tailwind Config -->
+  <style>
+    body { font-family: "Space Grotesk", sans-serif; }
+    header.scrolled {
+      background-color: rgba(17, 24, 39, 0.95);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                  0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-primary": "#f472b6",
+            "brand-secondary": "#60a5fa",
+            "brand-dark": "#111827",
+            "brand-light": "#f3f4f6"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <!-- Header -->
+  <header class="bg-brand-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4">
+      <ul class="flex justify-center md:justify-end items-center space-x-6 md:space-x-8">
+        <li><a href="index.html" class="text-lg hover:text-brand-primary transition-colors duration-300">Home</a></li>
+        <li><a href="about.html" class="text-lg hover:text-brand-primary transition-colors duration-300">About</a></li>
+        <li><a href="#" class="text-lg text-brand-primary font-bold" aria-current="page">Services</a></li>
+        <li><a href="contact.html" class="bg-brand-primary text-white font-bold py-2 px-5 rounded-full hover:bg-pink-500 transition-all duration-300 transform hover:scale-105">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative h-[60vh] flex items-center justify-center text-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=1600&q=80"
+             alt="Performer on trapeze"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
+      </div>
+      <div class="relative z-10 px-6 max-w-3xl" data-aos="zoom-in">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white" data-cms-id="services_hero_title">Our Services</h1>
+        <p class="text-xl md:text-2xl text-gray-300" data-cms-id="services_hero_subtitle">
+          From brand storyboarding to AI-powered automation—pick your act, we’ll make it spectacular.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Offerings -->
+    <section class="py-20 lg:py-32 bg-gray-900" id="core-offerings">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white" data-cms-id="offerings_title">Core Offerings</h2>
+          <p class="text-lg text-gray-400 mt-2" data-cms-id="offerings_subtitle">
+            Three rings—each one packed with different thrills.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <!-- Brand & Story -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-bold mb-3 text-brand-secondary" data-cms-id="card_title_1">Brand &amp; Story</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-400" data-cms-id="card_list_1">
+              <li>Brand voice development</li>
+              <li>Messaging frameworks</li>
+              <li>Taglines & copywriting</li>
+              <li>Visual identity guidelines</li>
+            </ul>
+          </div>
+
+          <!-- Web & App Dev -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-bold mb-3 text-brand-secondary" data-cms-id="card_title_2">Web &amp; App Dev</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-400" data-cms-id="card_list_2">
+              <li>Next.js & React builds</li>
+              <li>Progressive web apps</li>
+              <li>eCommerce & memberships</li>
+              <li>Performance optimization</li>
+            </ul>
+          </div>
+
+          <!-- AI & Automation -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-bold mb-3 text-brand-secondary" data-cms-id="card_title_3">AI &amp; Automation</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-400" data-cms-id="card_list_3">
+              <li>GPT chatbots & assistants</li>
+              <li>Process automation</li>
+              <li>Data integrations & RAG</li>
+              <li>No-code ops dashboards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="py-20 lg:py-32" id="packages">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white" data-cms-id="packages_title">Service Packages</h2>
+          <p class="text-lg text-gray-400 mt-2" data-cms-id="packages_subtitle">
+            One-man show or full three-ring production—your call.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <!-- Essential Plan -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-bold text-brand-secondary mb-3" data-cms-id="plan_title_1">Essential</h3>
+            <p class="text-4xl font-extrabold mb-4 text-white">$197<span class="text-lg font-medium"> one-time</span></p>
+            <ul class="list-disc list-inside space-y-2 text-gray-400 flex-1" data-cms-id="plan_features_1">
+              <li>Single-file premium website</li>
+              <li>Competitor research report</li>
+              <li>GPT-powered chatbot</li>
+              <li>Hosting for 1 year</li>
+            </ul>
+            <a href="contact.html" class="mt-6 bg-brand-secondary text-white font-bold py-3 px-6 rounded-full hover:bg-blue-500 transition">Get Started</a>
+          </div>
+
+          <!-- Professional Plan -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-bold text-brand-secondary mb-3" data-cms-id="plan_title_2">Professional</h3>
+            <p class="text-4xl font-extrabold mb-4 text-white">$197<span class="text-lg font-medium"> setup</span><br><span class="text-2xl">$197/mo</span></p>
+            <ul class="list-disc list-inside space-y-2 text-gray-400 flex-1" data-cms-id="plan_features_2">
+              <li>Next.js website with revisions</li>
+              <li>Ongoing SEO & updates</li>
+              <li>Monthly chatbot training</li>
+              <li>Custom domain & hosting</li>
+            </ul>
+            <a href="contact.html" class="mt-6 bg-brand-secondary text-white font-bold py-3 px-6 rounded-full hover:bg-blue-500 transition">Book a Call</a>
+          </div>
+
+          <!-- Elite Plan -->
+          <div class="bg-gray-800 rounded-xl p-10 shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-bold text-brand-secondary mb-3" data-cms-id="plan_title_3">Elite</h3>
+            <p class="text-4xl font-extrabold mb-4 text-white">$397<span class="text-lg font-medium"> setup</span><br><span class="text-2xl">$397/mo</span></p>
+            <ul class="list-disc list-inside space-y-2 text-gray-400 flex-1" data-cms-id="plan_features_3">
+              <li>Everything in Professional</li>
+              <li>Social media management</li>
+              <li>Review responses & reports</li>
+              <li>Monthly video & newsletter</li>
+            </ul>
+            <a href="contact.html" class="mt-6 bg-brand-secondary text-white font-bold py-3 px-6 rounded-full hover:bg-blue-500 transition">Join the Elite</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gray-900 py-20 lg:py-24">
+      <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white" data-cms-id="services_cta_title">
+          Ready to pick your package?
+        </h2>
+        <a href="contact.html"
+           class="mt-6 inline-block bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/20"
+           data-cms-id="services_cta_button">
+           Let's Talk</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark border-t border-gray-800 py-6">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; <span id="year"></span> The Sarcastic Circus. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Custom Scripts -->
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Init AOS
+    AOS.init({ duration: 800, once: true, offset: 50 });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^=\"#\"]').forEach(a => {
+      a.addEventListener('click', e => {
+        if (a.getAttribute('href') === '#') return;
+        e.preventDefault();
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Sticky header toggle
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      window.scrollY > 50 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+    });
+
+    // Mock CMS data (remove in prod)
+    document.addEventListener('DOMContentLoaded', () => {
+      const mock = {
+        services_hero_title: 'Our Services',
+        services_hero_subtitle: 'From brand storyboarding to AI-powered automation—pick your act, we’ll make it spectacular.',
+        offerings_title: 'Core Offerings',
+        offerings_subtitle: 'Three rings—each one packed with different thrills.',
+        card_title_1: 'Brand & Story',
+        card_title_2: 'Web & App Dev',
+        card_title_3: 'AI & Automation',
+        packages_title: 'Service Packages',
+        packages_subtitle: 'One-man show or full three-ring production—your call.',
+        plan_title_1: 'Essential',
+        plan_title_2: 'Professional',
+        plan_title_3: 'Elite',
+        services_cta_title: 'Ready to pick your package?',
+        services_cta_button: \"Let's Talk\"
+      };
+      document.querySelectorAll('[data-cms-id]').forEach(el => {
+        const id = el.getAttribute('data-cms-id');
+        if (mock[id]) el.innerHTML = mock[id];
+      });
+    });
+  </script>
+</body>
+</html>
