@@ -19,9 +19,13 @@
 
   <!-- Custom Styles & Tailwind Config -->
   <style>
+    /* FIX: Prevents horizontal scrollbar caused by AOS animations */
+    html, body {
+      overflow-x: hidden;
+    }
     body {
+      position: relative; /* Helps ensure overflow is contained */
       font-family: "Space Grotesk", sans-serif;
-      overflow-x: hidden; /* Fix for AOS horizontal scroll issue */
     }
     header.scrolled {
       background-color: rgba(17, 24, 39, 0.95);
@@ -57,7 +61,7 @@
           <a href="about.html" class="text-lg hover:text-brand-primary transition-colors duration-300">About</a>
         </li>
         <li>
-          <a href="#services" class="text-lg hover:text-brand-primary transition-colors duration-300">Services</a>
+          <a href="services.html" class="text-lg hover:text-brand-primary transition-colors duration-300">Services</a>
         </li>
         <li>
           <a href="contact.html"
@@ -73,8 +77,9 @@
     <section id="hero" class="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=1600&q=80"
-             alt="Colorful circus tent interior"
+        <!-- NEW IMAGE: Vintage circus tent -->
+        <img src="https://images.unsplash.com/photo-1620789452355-3d1298a69f23?auto=format&fit=crop&w=1600&q=80"
+             alt="Vintage circus tent at dusk"
              class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-brand-dark/70"></div>
       </div>
@@ -87,7 +92,7 @@
         <p class="text-xl md:text-2xl text-gray-300 mx-auto" data-cms-id="home_hero_subtitle">
           We craft bold digital experiences with the precision of silicon & the flair of a high-wire act.
         </p>
-        <a href="#services"
+        <a href="services.html"
            class="mt-8 inline-block bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/20">
            Our Services</a>
       </div>
@@ -262,6 +267,7 @@
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
+        if (this.getAttribute("href") === "#") return; // Prevent jump for empty href
         e.preventDefault();
         const targetEl = document.querySelector(this.getAttribute("href"));
         if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
