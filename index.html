@@ -77,9 +77,9 @@
     <section id="hero" class="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <!-- NEW IMAGE: Vintage circus tent -->
-        <img src="https://images.unsplash.com/photo-1620789452355-3d1298a69f23?auto=format&fit=crop&w=1600&q=80"
-             alt="Vintage circus tent at dusk"
+        <!-- NEW RELIABLE IMAGE: A lit-up carnival ride at night -->
+        <img src="https://images.unsplash.com/photo-1599097187159-105658fb2a6c?auto=format&fit=crop&w=1600&q=80"
+             alt="A lit-up carnival ride at dusk"
              class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-brand-dark/70"></div>
       </div>
@@ -267,7 +267,7 @@
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
-        if (this.getAttribute("href") === "#") return; // Prevent jump for empty href
+        if (this.getAttribute("href") === "#") return;
         e.preventDefault();
         const targetEl = document.querySelector(this.getAttribute("href"));
         if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
@@ -300,7 +300,7 @@
         project_title_2: "Project B",
         project_title_3: "Project C",
         testimonials_title: "Rave Reviews",
-        testimonials_subtitle: "Don’t take our word for it—hear it straight from the crowd.",
+        testimonials_subtitle: "Don’t take our word for it—hear it from the crowd.",
         testimonial_quote_1: "“The Sarcastic Circus turned our stale website into a show-stopper. Ticket sales went up 40% overnight!”",
         testimonial_author_1: "C. Overly-Excited",
         testimonial_quote_2: "“Their AI automations saved us hundreds of hours. I finally have time to practice my juggling—literal juggling.”",
