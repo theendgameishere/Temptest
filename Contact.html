@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | The Sarcastic Circus</title>
+  <meta name="description" content="Get in touch with the Sarcastic Circus team." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Styles & Tailwind Config -->
+  <style>
+    body { font-family: "Space Grotesk", sans-serif; }
+    header.scrolled {
+      background-color: rgba(17, 24, 39, 0.95);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                  0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    input, textarea {
+      background-color: #1f2937; /* bg-gray-800 */
+      color: #f3f4f6;            /* brand-light */
+      border-radius: 0.5rem;
+      width: 100%;
+      padding: 0.75rem 1rem;
+    }
+    input::placeholder,
+    textarea::placeholder { color: #6b7280; } /* gray-500 */
+    input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 2px #60a5fa; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-primary": "#f472b6",
+            "brand-secondary": "#60a5fa",
+            "brand-dark": "#111827",
+            "brand-light": "#f3f4f6"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <!-- Header -->
+  <header class="bg-brand-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4">
+      <ul class="flex justify-center md:justify-end items-center space-x-6 md:space-x-8">
+        <li><a href="index.html" class="text-lg hover:text-brand-primary transition-colors duration-300">Home</a></li>
+        <li><a href="about.html" class="text-lg hover:text-brand-primary transition-colors duration-300">About</a></li>
+        <li><a href="services.html" class="text-lg hover:text-brand-primary transition-colors duration-300">Services</a></li>
+        <li><a href="#" class="text-lg text-brand-primary font-bold" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="relative h-[60vh] flex items-center justify-center text-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1600&q=80"
+             alt="Vintage telephone"
+             class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
+      </div>
+      <div class="relative z-10 px-6 max-w-3xl" data-aos="zoom-in">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white" data-cms-id="contact_hero_title">Let's Talk</h1>
+        <p class="text-xl md:text-2xl text-gray-300" data-cms-id="contact_hero_subtitle">
+          Drop us a line, send a raven, or swing by the big top.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="py-20 lg:py-32 bg-gray-900">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <!-- Info -->
+        <div class="space-y-8" data-aos="fade-right">
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-secondary">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21.75 6.75v10.5A2.25 2.25 0 0119.5 19.5H4.5A2.25 2.25 0 012.25 17.25V6.75M6 9l6 4.5L18 9" />
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-white" data-cms-id="contact_email_label">Email</h3>
+              <p class="text-gray-400" data-cms-id="contact_email">hello@sarcasticcircus.com</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-secondary">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 6.75L11.5 12 2.25 17.25V6.75zm19.5 0L12.5 12l9.25 5.25V6.75z" />
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-white" data-cms-id="contact_phone_label">Phone</h3>
+              <p class="text-gray-400" data-cms-id="contact_phone">+1 (555) 123-4567</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-brand-secondary">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6c4.25.5 7.5 3.803 7.5 8.25 0 .379-.03.751-.088 1.116a2.25 2.25 0 01-2.162 1.884l-1.097.073c-.79.053-1.376.728-1.27 1.506l.087.65a3 3 0 01-3.602 3.468v0A3 3 0 018.83 19.24l.087-.65c.106-.778-.48-1.453-1.27-1.506l-1.097-.073A2.25 2.25 0 014.388 15.366 7.583 7.583 0 014.5 14.25C4.5 9.803 7.75 6.5 12 6z" />
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-white" data-cms-id="contact_location_label">Location</h3>
+              <p class="text-gray-400" data-cms-id="contact_location">123 Big Top Ave, Imagination City</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div data-aos="fade-left">
+          <form action="https://formspree.io/f/yourformid" method="POST"
+                class="bg-gray-800 p-8 rounded-xl shadow-lg space-y-6">
+            <h2 class="text-2xl font-bold text-white" data-cms-id="form_title">Send a Message</h2>
+
+            <div>
+              <label for="name" class="sr-only">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required />
+            </div>
+            <div>
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="message" class="sr-only">Message</label>
+              <textarea id="message" name="message" rows="5"
+                        placeholder="Tell us what's on your mind" required></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-brand-secondary text-white font-bold py-3 rounded-full hover:bg-blue-500 transition">
+              <span data-cms-id="form_button">Send It!</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gray-900 py-20 lg:py-24">
+      <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white" data-cms-id="contact_cta_title">
+          Prefer smoke signals?
+        </h2>
+        <p class="text-gray-400 max-w-xl mx-auto mt-4" data-cms-id="contact_cta_subtext">
+          We'll decode them, too. But email is faster.
+        </p>
+        <a href="mailto:hello@sarcasticcircus.com"
+           class="mt-6 inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-pink-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-pink-500/20"
+           data-cms-id="contact_cta_button">
+           Email Us</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark border-t border-gray-800 py-6">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; <span id="year"></span> The Sarcastic Circus. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Custom Scripts -->
+  <script>
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // AOS
+    AOS.init({ duration: 800, once: true, offset: 50 });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^=\"#\"]').forEach(a => {
+      a.addEventListener('click', e => {
+        if (a.getAttribute('href') === '#') return;
+        e.preventDefault();
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Sticky header
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      window.scrollY > 50 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+    });
+
+    // Mock CMS (remove in prod)
+    document.addEventListener('DOMContentLoaded', () => {
+      const mock = {
+        contact_hero_title: \"Let's Talk\",
+        contact_hero_subtitle: \"Drop us a line, send a raven, or swing by the big top.\",
+        contact_email: \"hello@sarcasticcircus.com\",
+        contact_phone: \"+1 (555) 123-4567\",
+        contact_location: \"123 Big Top Ave, Imagination City\",
+        form_title: \"Send a Message\",
+        form_button: \"Send It!\",
+        contact_cta_title: \"Prefer smoke signals?\",
+        contact_cta_subtext: \"We'll decode them, too. But email is faster.\",
+        contact_cta_button: \"Email Us\"
+      };
+      document.querySelectorAll('[data-cms-id]').forEach(el => {
+        const id = el.getAttribute('data-cms-id');
+        if (mock[id]) el.innerHTML = mock[id];
+      });
+    });
+  </script>
+</body>
+</html>
