@@ -1,294 +1,319 @@
-from textwrap import dedent
 
-html2 = dedent("""\
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Echo Electric | Premier Electrical Services</title>
-      <meta name="description" content="Licensed & insured electricians providing 24‑hour emergency service, residential rewiring and commercial installs across Central Alabama.">
-      <meta property="og:title" content="Echo Electric | Premier Electrical Services">
-      <meta property="og:description" content="Licensed & insured electricians providing 24‑hour emergency service, residential rewiring and commercial installs across Central Alabama.">
-      <meta property="og:image" content="https://images.unsplash.com/photo-1516116216624-53e697fedfde?auto=format&fit=crop&w=1200&q=80">
-      <meta property="og:type" content="website">
-      <meta name="theme-color" content="#111827">
-    
-      <!-- Tailwind -->
-      <script src="https://cdn.tailwindcss.com"></script>
-    
-      <!-- AOS scroll animations -->
-      <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    
-      <!-- Manifest placeholder -->
-      <link rel="manifest" id="pwa-manifest">
-    
-      <style>
-        /* Hero gradient overlay */
-        .hero-section::before{
-          content:"";position:absolute;inset:0;z-index:0;
-          background:linear-gradient(to bottom right,rgba(0,0,0,.75)0%,rgba(17,17,23,.9)60%);
-        }
-        .hero-section>*{position:relative;z-index:10;}
-        /* Glass-morph sticky header */
-        .glass-header{backdrop-filter:blur(12px);background:rgba(17,17,23,.6);}
-        /* Hide scrollbar on testimonial slider */
-        .hide-scroll-bar::-webkit-scrollbar{display:none;}
-        .hide-scroll-bar{-ms-overflow-style:none;scrollbar-width:none;}
-      </style>
-    </head>
-    <body class="font-sans text-gray-800 scroll-smooth">
-    <!-- Progress bar -->
-    <div id="progress" class="fixed top-0 left-0 h-1 bg-teal-500 z-50 w-0"></div>
-    
-    <!-- Navigation -->
-    <header class="glass-header fixed w-full z-40 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between h-16">
-        <a href="#home" class="font-bold text-xl tracking-tight text-white">Echo&nbsp;Electric</a>
-        <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-200">
-          <a href="#services" class="hover:text-teal-400">Services</a>
-          <a href="#process" class="hover:text-teal-400">Process</a>
-          <a href="#gallery" class="hover:text-teal-400">Gallery</a>
-          <a href="#about" class="hover:text-teal-400">About</a>
-          <a href="#faq" class="hover:text-teal-400">FAQ</a>
-          <a href="#contact" class="hover:text-teal-400">Contact</a>
-        </nav>
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sarcastic Circus | Human creativity & machine precision</title>
+  <meta name="description" content="Human creativity & machine precision under one big top." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Styles & Tailwind Config -->
+  <style>
+    body {
+      font-family: "Space Grotesk", sans-serif;
+    }
+    header.scrolled {
+      background-color: rgba(17, 24, 39, 0.95);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                  0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-primary": "#f472b6",
+            "brand-secondary": "#60a5fa",
+            "brand-dark": "#111827",
+            "brand-light": "#f3f4f6",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+  <!-- Header -->
+  <header class="bg-brand-dark/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4">
+      <ul class="flex justify-center md:justify-end items-center space-x-6 md:space-x-8">
+        <li>
+          <a href="#home" class="text-lg text-brand-primary font-bold" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="about.html" class="text-lg hover:text-brand-primary transition-colors duration-300">About</a>
+        </li>
+        <li>
+          <a href="#services" class="text-lg hover:text-brand-primary transition-colors duration-300">Services</a>
+        </li>
+        <li>
+          <a href="contact.html"
+             class="bg-brand-primary text-white font-bold py-2 px-5 rounded-full hover:bg-pink-500 transition-all duration-300 transform hover:scale-105">
+             Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=1600&q=80"
+             alt="Colorful circus tent interior"
+             class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
       </div>
-    </header>
-    
-    <main class="overflow-x-hidden">
-      <!-- Hero -->
-      <section id="home" class="hero-section relative h-screen flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1581091870688-3e25c22508b4?auto=format&fit=crop&w=1200&q=80');">
-        <div data-aos="fade-up">
-          <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Power You Can Trust</h1>
-          <p class="max-w-xl mx-auto text-lg md:text-xl mb-8">24&nbsp;hour emergency response • Residential & Commercial • Licensed & Insured</p>
-          <a href="#contact" class="inline-block px-8 py-3 bg-teal-500 hover:bg-teal-600 rounded-full font-semibold transition">Request a Quote</a>
-        </div>
-      </section>
-    
-      <!-- Services -->
-      <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our Core Services</h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-white p-8 rounded-xl shadow-md flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="50">
-              <!-- icon -->
-              <svg class="w-12 h-12 text-teal-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v10.5A2.25 2.25 0 0 0 9 15.75h6a2.25 2.25 0 0 0 2.25-2.25V3m-10.5 0h10.5m-10.5 0H3.375a.375.375 0 0 0-.375.375v2.25c0 .207.168.375.375.375H6.75m10.5-3h3.375c.207 0 .375.168.375.375v2.25a.375.375 0 0 1-.375.375H17.25M6.75 6h10.5" /></svg>
-              <h3 class="font-semibold text-lg mb-2">Residential Re‑wiring</h3>
-              <p>Whole‑house upgrades & panel swaps ensure your family’s safety and efficiency.</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-md flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
-              <svg class="w-12 h-12 text-teal-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
-              <h3 class="font-semibold text-lg mb-2">Commercial Build‑outs</h3>
-              <p>From restaurants to retail, we design and install to code—on schedule.</p>
-            </div>
-            <div class="bg-white p-8 rounded-xl shadow-md flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="150">
-              <svg class="w-12 h-12 text-teal-500 mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5h5.25v5.25M10.5 19.5H5.25V14.25"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 4.5 12 12m0 0L4.5 19.5" /></svg>
-              <h3 class="font-semibold text-lg mb-2">24 / 7 Emergency</h3>
-              <p>Lightning strike? Breaker failure? A licensed tech is on the way—any hour, any day.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Process -->
-      <section id="process" class="py-20 bg-gradient-to-b from-white to-gray-100">
-        <div class="max-w-4xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Our 3‑Step Process</h2>
-          <div class="grid md:grid-cols-3 gap-10">
-            <div data-aos="fade-up" data-aos-delay="50">
-              <div class="w-12 h-12 flex items-center justify-center bg-teal-500 text-white rounded-full mx-auto mb-4 font-bold">1</div>
-              <h3 class="text-lg font-semibold text-center mb-2">Free Site Audit</h3>
-              <p class="text-center">We inspect, test and quote—no strings attached.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-              <div class="w-12 h-12 flex items-center justify-center bg-teal-500 text-white rounded-full mx-auto mb-4 font-bold">2</div>
-              <h3 class="text-lg font-semibold text-center mb-2">Transparent Proposal</h3>
-              <p class="text-center">Flat‑rate pricing, parts & labour spelled out—zero surprises.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="150">
-              <div class="w-12 h-12 flex items-center justify-center bg-teal-500 text-white rounded-full mx-auto mb-4 font-bold">3</div>
-              <h3 class="text-lg font-semibold text-center mb-2">Code‑Perfect Delivery</h3>
-              <p class="text-center">Certified electricians complete, clean and test—guaranteed.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Gallery -->
-      <section id="gallery" class="py-20 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Recent Projects</h2>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" data-aos="zoom-in">
-            <img src="https://images.unsplash.com/photo-1551918120-9739cb43093f?auto=format&fit=crop&w=600&q=80" alt="Warehouse lighting install" class="rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1512446733611-9099a758e6ec?auto=format&fit=crop&w=600&q=80" alt="Panel upgrade" class="rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1581092795363-027a37fa5bca?auto=format&fit=crop&w=600&q=80" alt="Restaurant build‑out" class="rounded-lg shadow">
-            <img src="https://images.unsplash.com/photo-1611175694980-e988bfe5affd?auto=format&fit=crop&w=600&q=80" alt="EV charger install" class="rounded-lg shadow">
-          </div>
-        </div>
-      </section>
-    
-      <!-- Metrics -->
-      <section class="py-20 bg-gradient-to-b from-gray-100 to-white">
-        <div class="max-w-4xl mx-auto px-4 grid sm:grid-cols-3 gap-8 text-center">
-          <div>
-            <span class="counter text-4xl font-extrabold text-teal-600" data-target="12">0</span>
-            <p class="mt-2 font-medium">Years Experience</p>
-          </div>
-          <div>
-            <span class="counter text-4xl font-extrabold text-teal-600" data-target="450">0</span>
-            <p class="mt-2 font-medium">Projects Completed</p>
-          </div>
-          <div>
-            <span class="counter text-4xl font-extrabold text-teal-600" data-target="98">0</span>
-            <p class="mt-2 font-medium">5‑Star Reviews</p>
-          </div>
-        </div>
-      </section>
-    
-      <!-- About -->
-      <section id="about" class="py-20 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
-          <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44357d?auto=format&fit=crop&w=600&q=80" alt="Electrical tester" class="rounded-lg shadow-lg w-full lg:w-1/2" loading="lazy" decoding="async" data-aos="fade-right">
-          <div class="lg:w-1/2" data-aos="fade-left">
-            <h2 class="text-3xl font-bold mb-4">Craftsmanship Meets Safety</h2>
-            <p class="mb-4">Echo Electric is a veteran‑owned, family‑run team of master and journeyman electricians. We fuse old‑school attention to detail with cutting‑edge diagnostic tech, guaranteeing code‑perfect installs that last.</p>
-            <p>We serve Montgomery, Prattville, Millbrook and the wider River Region—backed by a <span class="font-semibold">100% workmanship warranty</span>.</p>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Testimonials -->
-      <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-          <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">What Clients Say</h2>
-          <div class="flex overflow-x-auto hide-scroll-bar space-x-6 pb-4">
-            <figure class="min-w-[280px] bg-gray-50 rounded-xl p-6 shadow" data-aos="fade-up" data-aos-delay="50">
-              <blockquote class="italic">“Lightning fried half our outlets. Echo had us back up same night—life savers!”</blockquote>
-              <figcaption class="mt-4 font-medium">— Katie R.</figcaption>
-            </figure>
-            <figure class="min-w-[280px] bg-gray-50 rounded-xl p-6 shadow" data-aos="fade-up" data-aos-delay="100">
-              <blockquote class="italic">“Clean, punctual, and the price was exactly what they quoted.”</blockquote>
-              <figcaption class="mt-4 font-medium">— Marcus D.</figcaption>
-            </figure>
-            <figure class="min-w-[280px] bg-gray-50 rounded-xl p-6 shadow" data-aos="fade-up" data-aos-delay="150">
-              <blockquote class="italic">“Passed inspection first try—builder was impressed.”</blockquote>
-              <figcaption class="mt-4 font-medium">— Shelby T.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-    
-      <!-- FAQ -->
-      <section id="faq" class="py-20 bg-gray-50">
-        <div class="max-w-3xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">FAQ</h2>
-          <div class="space-y-4">
-            <details class="bg-white rounded-lg p-4 shadow" data-aos="fade-up" data-aos-delay="50">
-              <summary class="cursor-pointer font-medium">Are you licensed and insured?</summary>
-              <p class="mt-2">Yes—State of Alabama Electrical Contractor #12345 and $2M liability coverage.</p>
-            </details>
-            <details class="bg-white rounded-lg p-4 shadow" data-aos="fade-up" data-aos-delay="100">
-              <summary class="cursor-pointer font-medium">Do you offer financing?</summary>
-              <p class="mt-2">For projects over $1,000 we partner with Pay‑Over‑Time to offer 0% plans for 6 months.</p>
-            </details>
-            <details class="bg-white rounded-lg p-4 shadow" data-aos="fade-up" data-aos-delay="150">
-              <summary class="cursor-pointer font-medium">How fast can you respond to emergencies?</summary>
-              <p class="mt-2">Average dispatch time inside Montgomery metro is <strong>45 minutes</strong> or less.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-    
-      <!-- Contact -->
-      <section id="contact" class="py-20 bg-gray-100">
-        <div class="max-w-xl mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Let’s Talk Power</h2>
-          <form action="#" method="POST" class="space-y-6" data-aos="fade-up" data-aos-delay="100">
-            <div>
-              <label for="name" class="block text-sm font-medium mb-1">Name</label>
-              <input id="name" name="name" type="text" required class="w-full p-3 border rounded-md focus:ring-2 focus:ring-teal-500">
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium mb-1">Email</label>
-              <input id="email" name="email" type="email" required class="w-full p-3 border rounded-md focus:ring-2 focus:ring-teal-500">
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium mb-1">Message</label>
-              <textarea id="message" name="message" rows="4" required class="w-full p-3 border rounded-md focus:ring-2 focus:ring-teal-500"></textarea>
-            </div>
-            <input type="hidden" name="_gotcha" style="display:none">
-            <button type="submit" class="w-full py-3 bg-teal-500 hover:bg-teal-600 rounded-md font-semibold text-white">Send Message</button>
-          </form>
-          <p class="text-center mt-6 text-sm">Or call us 24/7: <a href="tel:+13345551234" class="text-teal-600 font-medium">+1 (334) 555‑1234</a></p>
-        </div>
-      </section>
-    </main>
-    
-    <footer class="bg-gray-900 text-gray-400 text-sm py-6">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        © <span id="year"></span> Echo Electric • 123 Main St, Millbrook, AL 36054
+
+      <!-- Content -->
+      <div class="relative z-10 px-6 max-w-3xl" data-aos="zoom-in">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white" data-cms-id="home_hero_title">
+          Where AI &amp; Imagination Collide
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mx-auto" data-cms-id="home_hero_subtitle">
+          We craft bold digital experiences with the precision of silicon &amp; the flair of a high-wire act.
+        </p>
+        <a href="#services"
+           class="mt-8 inline-block bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/20">
+           Our Services</a>
       </div>
-    </footer>
-    
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ once:true, duration:700 });
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // Progress bar
-      window.addEventListener('scroll', () => {
-        const doc = document.documentElement;
-        const total = doc.scrollHeight - doc.clientHeight;
-        document.getElementById('progress').style.width = (doc.scrollTop / total) * 100 + '%';
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-32 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white" data-cms-id="services_title">What We Do Best</h2>
+          <p class="text-lg text-gray-400 mt-2" data-cms-id="services_subtitle">
+            Three rings. Endless possibilities.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Service 1 -->
+          <div class="bg-gray-800 p-10 rounded-xl text-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor"
+                 class="w-12 h-12 mx-auto text-brand-secondary mb-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3c2.21 0 4 1.343 4 3s-1.79 3-4 3-4-1.343-4-3 1.79-3 4-3zm-4 9h8v8H8v-8z" />
+            </svg>
+            <h3 class="text-2xl font-bold mb-2 text-brand-secondary" data-cms-id="service_title_1">Brand &amp; Story</h3>
+            <p class="text-gray-400" data-cms-id="service_desc_1">
+              Messaging that sticks the landing—no clowning around.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-gray-800 p-10 rounded-xl text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor"
+                 class="w-12 h-12 mx-auto text-brand-secondary mb-4">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 3.75L2.25 12l7.5 8.25m12-16.5L14.25 12l7.5 8.25" />
+            </svg>
+            <h3 class="text-2xl font-bold mb-2 text-brand-secondary" data-cms-id="service_title_2">Web &amp; App Dev</h3>
+            <p class="text-gray-400" data-cms-id="service_desc_2">
+              High-wire performance powered by clean, scalable code.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bg-gray-800 p-10 rounded-xl text-center shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke-width="1.5" stroke="currentColor"
+                 class="w-12 h-12 mx-auto text-brand-secondary mb-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5M3.75 15h16.5" />
+            </svg>
+            <h3 class="text-2xl font-bold mb-2 text-brand-secondary" data-cms-id="service_title_3">AI &amp; Automation</h3>
+            <p class="text-gray-400" data-cms-id="service_desc_3">
+              Let the bots handle the juggling so you can headline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-20 lg:py-32">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white" data-cms-id="projects_title">Featured Work</h2>
+          <p class="text-lg text-gray-400 mt-2" data-cms-id="projects_subtitle">
+            A spotlight on recent crowd-pleasers.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Project Card 1 -->
+          <div class="relative overflow-hidden rounded-xl group" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80"
+                 alt="Mock project screenshot 1"
+                 class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110"
+                 data-cms-id="project_img_1" />
+            <div class="absolute inset-0 bg-brand-dark/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xl text-white font-bold" data-cms-id="project_title_1">Project A</h3>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div class="relative overflow-hidden rounded-xl group" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                 alt="Mock project screenshot 2"
+                 class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110"
+                 data-cms-id="project_img_2" />
+            <div class="absolute inset-0 bg-brand-dark/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xl text-white font-bold" data-cms-id="project_title_2">Project B</h3>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div class="relative overflow-hidden rounded-xl group" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=800&q=80"
+                 alt="Mock project screenshot 3"
+                 class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110"
+                 data-cms-id="project_img_3" />
+            <div class="absolute inset-0 bg-brand-dark/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xl text-white font-bold" data-cms-id="project_title_3">Project C</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 lg:py-32 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white" data-cms-id="testimonials_title">Rave Reviews</h2>
+          <p class="text-lg text-gray-400 mt-2" data-cms-id="testimonials_subtitle">
+            Don’t take our word for it—hear it straight from the crowd.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto space-y-12">
+          <!-- Testimonial 1 -->
+          <blockquote class="bg-gray-800 p-8 rounded-xl shadow-lg relative" data-aos="fade-right" data-aos-delay="100">
+            <p class="text-xl italic text-gray-300" data-cms-id="testimonial_quote_1">
+              “The Sarcastic Circus turned our stale website into a show-stopper. Ticket sales went up 40% overnight!”
+            </p>
+            <footer class="mt-4 text-right">
+              <span class="text-brand-secondary font-bold" data-cms-id="testimonial_author_1">C. Overly-Excited</span>, Marketing Director
+            </footer>
+          </blockquote>
+          <!-- Testimonial 2 -->
+          <blockquote class="bg-gray-800 p-8 rounded-xl shadow-lg relative" data-aos="fade-left" data-aos-delay="200">
+            <p class="text-xl italic text-gray-300" data-cms-id="testimonial_quote_2">
+              “Their AI automations saved us hundreds of hours. I finally have time to practice my juggling—literal juggling.”
+            </p>
+            <footer class="mt-4 text-right">
+              <span class="text-brand-secondary font-bold" data-cms-id="testimonial_author_2">B. Busy-Bee</span>, Operations Lead
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-900 py-20 lg:py-24">
+      <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white" data-cms-id="cta_title">
+          Ready to take center stage?
+        </h2>
+        <a href="contact.html"
+           class="mt-6 inline-block bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/20"
+           data-cms-id="cta_button">
+           Let's Talk</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark border-t border-gray-800 py-6">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <p>&copy; <span id="year"></span> The Sarcastic Circus. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AOS Animation Library JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Custom Site Scripts -->
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Initialize AOS for scroll animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetEl = document.querySelector(this.getAttribute("href"));
+        if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
       });
-      // Counter animation
-      const counters = document.querySelectorAll('.counter');
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            const el = entry.target;
-            const target = +el.dataset.target;
-            let current = 0;
-            const inc = target / 120;
-            const timer = setInterval(()=>{
-              current += inc;
-              if(current >= target){ el.textContent = target; clearInterval(timer);}else{el.textContent = Math.round(current);} },15);
-            io.unobserve(el);
-          }
-        });
-      }, {threshold:.6});
-      counters.forEach(c=>io.observe(c));
-    
-      /* PWA glue */
-      const manifest = {
-        name:"Echo Electric",
-        short_name:"Echo",
-        start_url:".",
-        display:"standalone",
-        background_color:"#0d0d0d",
-        theme_color:"#111827",
-        icons:[
-          {src:"https://dummyimage.com/192x192/111827/ffffff&text=E",sizes:"192x192",type:"image/png"},
-          {src:"https://dummyimage.com/512x512/111827/ffffff&text=E",sizes:"512x512",type:"image/png"}
-        ]
+    });
+
+    // Sticky header effect
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) header.classList.add("scrolled");
+      else header.classList.remove("scrolled");
+    });
+
+    // Mock CMS Data Rendering Example (delete in production)
+    async function fetchAndRenderContent() {
+      const mockData = {
+        home_hero_title: "Where AI & Imagination Collide",
+        home_hero_subtitle: "We craft bold digital experiences with the precision of silicon & the flair of a high-wire act.",
+        services_title: "What We Do Best",
+        services_subtitle: "Three rings. Endless possibilities.",
+        service_title_1: "Brand & Story",
+        service_desc_1: "Messaging that sticks the landing—no clowning around.",
+        service_title_2: "Web & App Dev",
+        service_desc_2: "High-wire performance powered by clean, scalable code.",
+        service_title_3: "AI & Automation",
+        service_desc_3: "Let the bots handle the juggling so you can headline.",
+        projects_title: "Featured Work",
+        projects_subtitle: "A spotlight on recent crowd-pleasers.",
+        project_title_1: "Project A",
+        project_title_2: "Project B",
+        project_title_3: "Project C",
+        testimonials_title: "Rave Reviews",
+        testimonials_subtitle: "Don’t take our word for it—hear it straight from the crowd.",
+        testimonial_quote_1: "“The Sarcastic Circus turned our stale website into a show-stopper. Ticket sales went up 40% overnight!”",
+        testimonial_author_1: "C. Overly-Excited",
+        testimonial_quote_2: "“Their AI automations saved us hundreds of hours. I finally have time to practice my juggling—literal juggling.”",
+        testimonial_author_2: "B. Busy-Bee",
+        cta_title: "Ready to take center stage?",
+        cta_button: "Let's Talk",
       };
-      const manifestURL = URL.createObjectURL(new Blob([JSON.stringify(manifest)], {type:'application/json'}));
-      document.getElementById('pwa-manifest').href = manifestURL;
-      if('serviceWorker' in navigator){
-        const swSrc = \`
-          const CACHE='echoCache-v1';
-          self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./']))));
-          self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
-        \`;
-        navigator.serviceWorker.register(URL.createObjectURL(new Blob([swSrc], {type:'text/javascript'})));
-      }
-    </script>
-    </body>
-    </html>
-    """)
+      document.querySelectorAll("[data-cms-id]").forEach((el) => {
+        const id = el.getAttribute("data-cms-id");
+        if (mockData[id]) {
+          if (el.tagName === "IMG") el.src = mockData[id];
+          else el.innerHTML = mockData[id];
+        }
+      });
+    }
+    document.addEventListener("DOMContentLoaded", fetchAndRenderContent);
+  </script>
+</body>
+</html>
 
-with open('/mnt/data/echo_singlepage_pwa_v2.html', 'w', encoding='utf-8') as f:
-    f.write(html2)
 
-"/mnt/data/echo_singlepage_pwa_v2.html"
